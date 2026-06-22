@@ -172,12 +172,12 @@
 	<li>[<i>ATECH</i>]
             Beyond Single-Modality: A Comprehensive Review on Multi-Modality Fusion Paradigms in Precision Livestock Farming <sup></sup><br>
 	    Mao, Axiu and <strong>Meilu&nbsp;Zhu</strong> and Li, Yanzhen and Wang, Kaiying*<br>
-            <i>Smart Agricultural Technology (ATECH)</i>, 2026. (<strong>IF: 5.7</strong>)<br><br>
+            <i>Smart Agricultural Technology (ATECH)</i>, 2026. (<strong>IF: <span class="if-value" data-key="ATECH"></span></strong>)<br><br>
         </li> 	
 	<li>[<i>IJCV</i>]
             FedPD++: Enhanced Federated Open-Set Recognition with Parameter Disentanglement <sup></sup><br>
 	    Chen Yang, <strong>Meilu&nbsp;Zhu</strong>, Yifan Liu & Yixuan Yuan*<br>
-            <i>International Journal of Computer Vision (IJCV)</i>, 2026. (<strong>IF: 9.3</strong>)<br><br>
+            <i>International Journal of Computer Vision (IJCV)</i>, 2026. (<strong>IF: <span class="if-value" data-key="IJCV"></span></strong>)<br><br>
         </li> 	
 	<li>[<i>MedIA</i>]
             FedBM: Stealing Knowledge from Pre-trained Language Models for Heterogeneous Federated Learning <sup></sup><br>
@@ -482,5 +482,50 @@
 
 <div align="center">Last Updated by <a href="#">Meilu&nbsp;Zhu</a> &#64; <script language="javascript">document.write(document.lastModified.slice(0,10));</script></div>
 
+
+<script>
+	(function() {
+		// ------------------------------------------------------------
+		// 1. 定义所有期刊的影响因子 (IF) —— 您只需在这里修改数值！
+		//    键名 (key) 与 HTML 中 <span class="if-value" data-key="...">
+		//    的 data-key 属性值一一对应。
+		// ------------------------------------------------------------
+		const JOURNAL_IF = {
+			'MedIA': '12.41',
+			'TMI': '11.56',
+			'IJCV': '10.3',
+			'ATECH': '7.1',
+			'JBHI': '8.33',
+			'T-ASE': '6.636',
+			'COMPAG': '8.30',
+			'YBENG': '8.30',
+			'Neural_Networks': '8.67'
+		};
+
+		// ------------------------------------------------------------
+		// 2. 页面加载后自动填充所有 .if-value 元素
+		// ------------------------------------------------------------
+		function fillIFValues() {
+			const elements = document.querySelectorAll('.if-value');
+			for (let el of elements) {
+				const key = el.getAttribute('data-key');
+				if (key && JOURNAL_IF.hasOwnProperty(key)) {
+					el.textContent = JOURNAL_IF[key];
+				}
+			}
+		}
+
+		// 如果 DOM 已加载完成则立即执行，否则监听 DOMContentLoaded
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', fillIFValues);
+		} else {
+			fillIFValues();
+		}
+
+		// 将 JOURNAL_IF 暴露到全局，方便在浏览器控制台调试或手动更新
+		window.JOURNAL_IF = JOURNAL_IF;
+	})();
+</script>
+	
 </body>
 </html>
